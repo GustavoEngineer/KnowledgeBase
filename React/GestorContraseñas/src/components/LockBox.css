@@ -1,0 +1,227 @@
+.lockbox-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    /* Global grid */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* HUD Frame Styling */
+
+
+.hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--hud-primary);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.hud-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-label {
+    font-size: 0.8rem;
+    color: var(--hud-primary);
+    opacity: 0.8;
+}
+
+.hud-value {
+    font-size: 1.5rem;
+    font-family: var(--hud-font-mono);
+    font-weight: bold;
+}
+
+.hud-value.danger {
+    text-shadow: 0 0 5px #b366ff;
+}
+
+.title-panel h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 0 var(--hud-primary);
+}
+
+.hud-gauge-circle {
+    width: 40px;
+    height: 40px;
+    border: 2px dashed var(--hud-primary);
+    border-radius: 50%;
+    margin-top: 5px;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Split View Container */
+.split-view-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    gap: 20px;
+    z-index: 10;
+}
+
+/* Scroll Area (Left List) */
+.cards-scroll-area {
+    width: 350px;
+    /* Fixed width for list */
+    flex-shrink: 0;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 40px;
+}
+
+/* Detail Panel (Right Side) */
+.detail-panel {
+    flex: 1;
+    border: 1px solid var(--hud-primary);
+    background: rgba(179, 102, 255, 0.05);
+    padding: 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(179, 102, 255, 0.1);
+}
+
+.detail-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--hud-primary);
+    font-size: 1.5rem;
+    opacity: 0.5;
+    letter-spacing: 2px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.detail-content {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.detail-title {
+    font-size: 3rem;
+    color: white;
+    border-bottom: 2px solid var(--hud-primary);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px var(--hud-primary);
+}
+
+.detail-row {
+    margin-bottom: 30px;
+}
+
+.detail-label {
+    display: block;
+    font-size: 1rem;
+    color: var(--hud-primary);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.detail-value {
+    font-size: 1.8rem;
+    font-family: var(--hud-font-mono);
+    color: #ddd;
+    word-break: break-all;
+}
+
+.detail-value.highlight {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border: 1px dashed var(--hud-primary);
+}
+
+.detail-actions {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.hud-button {
+    background: transparent;
+    border: 1px solid var(--hud-primary);
+    color: var(--hud-primary);
+    padding: 15px 30px;
+    font-family: var(--hud-font-main);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hud-button:hover {
+    background: var(--hud-primary);
+    color: black;
+    box-shadow: 0 0 20px var(--hud-primary);
+}
+
+.hud-footer {
+    border-top: 1px solid var(--hud-primary);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--hud-font-mono);
+    font-size: 0.9rem;
+    opacity: 0.7;
+    z-index: 10;
+    flex-shrink: 0;
+    margin-top: 10px;
+}

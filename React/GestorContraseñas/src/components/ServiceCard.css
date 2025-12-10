@@ -1,0 +1,44 @@
+.service-card {
+    background-color: transparent;
+    border: 1px solid var(--hud-primary);
+    border-radius: 0;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    box-shadow: 0 0 10px rgba(179, 102, 255, 0.4);
+    background-color: rgba(179, 102, 255, 0.1);
+}
+
+.service-card.selected {
+    background-color: var(--hud-primary);
+    box-shadow: 0 0 15px var(--hud-primary);
+}
+
+/* Header/Name Styles */
+.service-header {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.service-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--hud-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    transition: color 0.2s;
+}
+
+.service-card.selected .service-name {
+    color: #fff;
+}

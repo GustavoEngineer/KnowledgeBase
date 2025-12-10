@@ -1,0 +1,87 @@
+[
+    {
+        "servicio": "Nube-Almacenamiento",
+        "correo": "cloud.storage@almacen.com",
+        "contrasena_cifrada_falsa": "C1fr4d0-d3-Nuv3"
+    },
+    {
+        "servicio": "App-Movil",
+        "correo": "movil.user@app.co",
+        "contrasena_cifrada_falsa": "P4ss-m0v1l-X"
+    },
+    {
+        "servicio": "Gestor-Tareas",
+        "correo": "proyecto.admin@gestion.pro",
+        "contrasena_cifrada_falsa": "T4sk-M4ster-F1c"
+    },
+    {
+        "servicio": "Blog-Personal",
+        "correo": "escritor.anonimo@blog.com",
+        "contrasena_cifrada_falsa": "P3ns4m13nt0-53cr3to"
+    },
+    {
+        "servicio": "Repositorio-GIT",
+        "correo": "dev.code@repo.io",
+        "contrasena_cifrada_falsa": "C0d3-L0ck3r-001"
+    },
+    {
+        "servicio": "Tienda-Mascotas",
+        "correo": "animal.lover@pets.shop",
+        "contrasena_cifrada_falsa": "G4t0-P3rr0-K3y"
+    },
+    {
+        "servicio": "Galería-Fotos",
+        "correo": "recuerdos.user@gallery.net",
+        "contrasena_cifrada_falsa": "Ph0t0-Pr0t3ct-X"
+    },
+    {
+        "servicio": "Wallet-Crypto",
+        "correo": "inversor.falso@crypto.biz",
+        "contrasena_cifrada_falsa": "B1tC01n-F1ct1c10"
+    },
+    {
+        "servicio": "Foro-Musica",
+        "correo": "fan.musica@sound.fm",
+        "contrasena_cifrada_falsa": "S0und-Wav3-P4ss"
+    },
+    {
+        "servicio": "Herramienta-Diseño",
+        "correo": "creativo.test@design.co",
+        "contrasena_cifrada_falsa": "D1s3ñ0-S3gr0"
+    },
+    {
+        "servicio": "VozIP-Chat",
+        "correo": "gamer.voice@voip.app",
+        "contrasena_cifrada_falsa": "Ch4t-V0z-S3cr3t"
+    },
+    {
+        "servicio": "Biblioteca-Digital",
+        "correo": "lector.anonimo@books.org",
+        "contrasena_cifrada_falsa": "L1br0-C1fr4d0"
+    },
+    {
+        "servicio": "Servicio-Viajes",
+        "correo": "viajero.frecuente@travel.com",
+        "contrasena_cifrada_falsa": "V14j3-S3gur0-24"
+    },
+    {
+        "servicio": "Suscripcion-Noticias",
+        "correo": "lector.diario@news.net",
+        "contrasena_cifrada_falsa": "N0t1c1as-K3y"
+    },
+    {
+        "servicio": "Cursos-Online",
+        "correo": "estudiante.test@learn.edu",
+        "contrasena_cifrada_falsa": "4pr3nd1z4j3-Cl4v3"
+    },
+    {
+        "servicio": "Plataforma-Fitness",
+        "correo": "deportista.sim@fit.app",
+        "contrasena_cifrada_falsa": "G1m-P4ss-F1t"
+    },
+    {
+        "servicio": "Teleconferencia",
+        "correo": "reunion.virtual@meet.com",
+        "contrasena_cifrada_falsa": "M33t1ng-S3cr3t"
+    }
+]
