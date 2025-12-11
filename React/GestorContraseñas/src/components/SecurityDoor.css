@@ -8,6 +8,47 @@
     /* Uses global grid */
     font-family: var(--hud-font-main);
     position: relative;
+    transition: all 0.3s ease;
+}
+
+/* --- Error Mode Overrides --- */
+.security-door-container.error-mode {
+    --hud-primary: #ff0000;
+}
+
+.security-door-container.error-mode::before {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.security-door-container.error-mode .security-door-input {
+    border-color: #ff0000;
+    color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
 
 /* Decorative corner markers or frame */
@@ -25,6 +66,7 @@
             100% 100%, 90% 100%, 90% 99.8%, 10% 99.8%, 10% 100%, 0 100%,
             0 90%, 0.2% 90%, 0.2% 10%, 0 10%);
     box-shadow: 0 0 15px rgba(179, 102, 255, 0.2);
+    transition: all 0.3s ease;
 }
 
 .security-door-title {
@@ -39,24 +81,35 @@
 }
 
 .security-door-input {
-    padding: 15px;
+    padding: 10px 5px;
     font-size: 1.2rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid var(--hud-primary);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #666;
+    /* Gray bottom border */
     color: var(--hud-primary);
-    width: 300px;
+    width: 100%;
     outline: none;
     font-family: var(--hud-font-mono);
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
-    box-shadow: 0 0 5px var(--hud-primary);
+    box-shadow: none;
     transition: all 0.3s ease;
+    border-radius: 0;
 }
 
 .security-door-input:focus {
-    background-color: rgba(179, 102, 255, 0.1);
-    box-shadow: 0 0 15px var(--hud-primary);
-    letter-spacing: 2px;
+    background-color: transparent;
+    border-bottom: 2px solid var(--hud-primary);
+    /* Purple on focus */
+    box-shadow: none;
+    letter-spacing: 1px;
+}
+
+/* Error specific input focus style to match red theme */
+.security-door-container.error-mode .security-door-input:focus {
+    background-color: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 0 20px #ff0000;
 }
 
 /* Menu & Form Styles */
@@ -120,6 +173,10 @@
     background: rgba(179, 102, 255, 0.1);
 }
 
+.security-door-container.error-mode .hud-button.primary {
+    background: rgba(255, 0, 0, 0.1);
+}
+
 .hud-button.primary:hover {
     background: var(--hud-primary);
 }
@@ -140,7 +197,52 @@
 }
 
 .message.error {
-    color: #F44336;
-    border-color: #F44336;
-    box-shadow: 0 0 10px rgba(244, 67, 54, 0.2);
+    color: #ff0000;
+    border-color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    animation: flash 1s infinite alternate;
+}
+
+@keyframes flash {
+    from {
+        opacity: 1;
+        text-shadow: 0 0 10px #ff0000;
+    }
+
+    to {
+        opacity: 0.5;
+        text-shadow: none;
+    }
+}
+
+.security-door-success-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: #4CAF50;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+    white-space: nowrap;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 2rem;
+    border: 2px solid #4CAF50;
+    animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    z-index: 100;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }

@@ -1,26 +1,21 @@
 import React, { useState } from 'react';
 import SecurityDoor from './components/SecurityDoor';
-import LockBox from './components/LockBox';
+import CenterPasswords from './components/CenterPasswords';
 
 const App = () => {
-    const [isUnlocked, setIsUnlocked] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    const handleUnlock = () => {
-        setIsUnlocked(true);
+    const handleUnlock = (key) => {
+        console.log("Simulación de desbloqueo con llave:", key);
+        setIsAuthenticated(true);
     };
 
-    const handleLock = () => {
-        setIsUnlocked(false);
-    };
+    if (isAuthenticated) {
+        return <CenterPasswords onLogout={() => setIsAuthenticated(false)} />;
+    }
 
     return (
-        <>
-            {!isUnlocked ? (
-                <SecurityDoor onUnlock={handleUnlock} />
-            ) : (
-                <LockBox onLock={handleLock} />
-            )}
-        </>
+        <SecurityDoor onUnlock={handleUnlock} />
     );
 };
 

@@ -1,24 +1,36 @@
 .service-card {
     background-color: transparent;
     border: 1px solid var(--hud-primary);
+    /* Restored border */
     border-radius: 0;
-    padding: 15px 15px;
+    /* Square borders */
+    padding: 20px 25px;
+    /* Larger */
     display: flex;
     align-items: center;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    margin-left: 0;
+    width: 90%;
+    /* Start slightly smaller to allow expansion */
 }
 
 .service-card:hover {
-    box-shadow: 0 0 10px rgba(179, 102, 255, 0.4);
+    box-shadow: 0 0 15px rgba(179, 102, 255, 0.4);
     background-color: rgba(179, 102, 255, 0.1);
+    width: 100%;
+    /* Expand width on hover */
+    padding-left: 35px;
+    /* Visual shift */
 }
 
 .service-card.selected {
     background-color: var(--hud-primary);
-    box-shadow: 0 0 15px var(--hud-primary);
+    box-shadow: 0 0 20px var(--hud-primary);
+    width: 100%;
+    /* Selected is also wide */
 }
 
 /* Header/Name Styles */
