@@ -54,36 +54,39 @@
 /* Corner Accents - Detached Style */
 .corner-accent {
     position: absolute;
-    width: 24px;
-    height: 24px;
-    border: 2px solid var(--active-color);
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--active-color);
     transition: all 0.3s ease;
+    z-index: 20;
+    filter: drop-shadow(0 0 2px var(--active-color)) drop-shadow(0 0 8px var(--active-color));
+    /* Subtle inner highlight */
 }
 
 .corner-tl {
-    top: -2px;
-    left: -2px;
+    top: 2px;
+    left: 2px;
     border-right: none;
     border-bottom: none;
 }
 
 .corner-tr {
-    top: -2px;
-    right: -2px;
+    top: 2px;
+    right: 2px;
     border-left: none;
     border-bottom: none;
 }
 
 .corner-bl {
-    bottom: -2px;
-    left: -2px;
+    bottom: 2px;
+    left: 2px;
     border-right: none;
     border-top: none;
 }
 
 .corner-br {
-    bottom: -2px;
-    right: -2px;
+    bottom: 2px;
+    right: 2px;
     border-left: none;
     border-top: none;
 }

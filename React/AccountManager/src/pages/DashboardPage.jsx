@@ -5,17 +5,14 @@ import accountsData from '../utils/Manager/accounts.json';
 import AccountCard from '../components/common/AccountCard.jsx';
 
 const DashboardPage = () => {
-    const [selectedAccounts, setSelectedAccounts] = useState(null);
-    const [selectedProvider, setSelectedProvider] = useState(null);
+    const [selectedAccount, setSelectedAccount] = useState(null);
 
     const handleAccountClick = (provider) => {
-        if (selectedProvider === provider) {
-            setSelectedAccounts(null);
-            setSelectedProvider(null);
+        const account = accountsData.find(acc => acc.provider.toLowerCase().includes(provider.toLowerCase()));
+        if (selectedAccount && selectedAccount.id === account?.id) {
+            setSelectedAccount(null); // Toggle off if same
         } else {
-            const accounts = accountsData.filter(acc => acc.provider.toLowerCase() === provider.toLowerCase());
-            setSelectedAccounts(accounts);
-            setSelectedProvider(provider);
+            setSelectedAccount(account || null);
         }
     };
 
@@ -24,7 +21,7 @@ const DashboardPage = () => {
             <header className="dashboard-header">
                 {/* Google Icon */}
                 <svg
-                    className={`icon-btn ${selectedProvider === 'Google' ? 'active' : ''}`}
+                    className={`icon-btn ${selectedAccount?.provider.includes('Google') ? 'active' : ''}`}
                     onClick={() => handleAccountClick('Google')}
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +31,7 @@ const DashboardPage = () => {
 
                 {/* Microsoft Icon */}
                 <svg
-                    className={`icon-btn ${selectedProvider === 'Microsoft' ? 'active' : ''}`}
+                    className={`icon-btn ${selectedAccount?.provider.includes('Microsoft') ? 'active' : ''}`}
                     onClick={() => handleAccountClick('Microsoft')}
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
@@ -43,14 +40,10 @@ const DashboardPage = () => {
                 </svg>
             </header>
 
-            {selectedProvider && (
+            {selectedAccount && (
                 <AccountCard
-                    accounts={selectedAccounts}
-                    provider={selectedProvider}
-                    onClose={() => {
-                        setSelectedAccounts(null);
-                        setSelectedProvider(null);
-                    }}
+                    account={selectedAccount}
+                    onClose={() => setSelectedAccount(null)}
                 />
             )}
         </div>
