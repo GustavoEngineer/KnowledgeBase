@@ -18,6 +18,17 @@
     z-index: 900;
 }
 
+.account-card.left-aligned {
+    right: auto;
+    left: 40px;
+    /* More space from edge */
+    width: 480px;
+    /* Wider */
+    top: 50%;
+    transform: translateY(-50%);
+    animation: fadeInLeftCentered 0.3s ease-out forwards;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -27,6 +38,18 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeftCentered {
+    from {
+        opacity: 0;
+        transform: translate(0, -55%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
     }
 }
 
@@ -188,4 +211,117 @@
     height: 6px;
     border-bottom: 2px solid var(--color-accent, #06b6d4);
     border-right: 2px solid var(--color-accent, #06b6d4);
+}
+
+/* Credentials List Specifics */
+.credential-list-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-accent-dim, rgba(6, 182, 212, 0.3));
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--color-accent-dim, rgba(6, 182, 212, 0.3));
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    /* In case we use 'a' tags later */
+}
+
+.credential-item:hover {
+    background-color: rgba(6, 182, 212, 0.15);
+    padding-left: 15px;
+    /* Slight movement effect */
+}
+
+.credential-icon {
+    margin-right: 12px;
+    color: var(--color-accent, #06b6d4);
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.credential-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.credential-name {
+    font-family: var(--font-display, sans-serif);
+    font-size: 1rem;
+    color: var(--color-text-primary, #e2e8f0);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.credential-subtext {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.7rem;
+    color: var(--color-text-secondary, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.credential-item:hover .credential-name {
+    color: var(--color-accent, #06b6d4);
+    text-shadow: 0 0 5px rgba(6, 182, 212, 0.4);
+}
+
+/* Centered Detail Card */
+.account-card.center-screen {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Start centered */
+    right: auto;
+    width: 450px;
+    height: auto;
+    z-index: 1000;
+    /* Use a unique animation or reset the transform in the animation */
+    animation: fadeInCenter 0.3s ease-out forwards;
+}
+
+@keyframes fadeInCenter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.copy-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.copy-btn {
+    background: transparent;
+    border: 1px solid var(--color-accent-dim, rgba(6, 182, 212, 0.3));
+    color: var(--color-accent, #06b6d4);
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-btn:hover {
+    background: rgba(6, 182, 212, 0.1);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
 }

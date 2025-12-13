@@ -18,12 +18,7 @@ const AccountCard = ({ account, onClose }) => {
             </div>
 
             <div className="card-body">
-                <div className="data-group">
-                    <label className="data-label">IDENTITY ID</label>
-                    <div className="data-value-box">
-                        {account.id}
-                    </div>
-                </div>
+
 
                 <div className="data-group">
                     <label className="data-label">EMAIL HANDLE</label>

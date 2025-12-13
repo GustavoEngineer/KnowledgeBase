@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './DashboardPage.css';
 import accountsData from '../utils/Manager/accounts.json';
 import AccountCard from '../components/common/AccountCard.jsx';
+import CredentialsList from '../components/common/CredentialsList.jsx';
 
 const DashboardPage = () => {
     const [selectedAccount, setSelectedAccount] = useState(null);
@@ -15,6 +16,17 @@ const DashboardPage = () => {
             setSelectedAccount(account || null);
         }
     };
+
+    const getProviderName = (account) => {
+        if (!account) return '';
+        if (account.provider.toLowerCase().includes('google')) return 'Google';
+        if (account.provider.toLowerCase().includes('microsoft')) return 'Microsoft';
+        return account.provider.split(' - ')[0];
+    };
+
+    const relatedAccounts = selectedAccount
+        ? accountsData.filter(acc => acc.provider.toLowerCase().includes(getProviderName(selectedAccount).toLowerCase()))
+        : [];
 
     return (
         <div className="dashboard-container">
@@ -41,10 +53,16 @@ const DashboardPage = () => {
             </header>
 
             {selectedAccount && (
-                <AccountCard
-                    account={selectedAccount}
-                    onClose={() => setSelectedAccount(null)}
-                />
+                <>
+                    <CredentialsList
+                        accounts={relatedAccounts}
+                        provider={getProviderName(selectedAccount)}
+                    />
+                    <AccountCard
+                        account={selectedAccount}
+                        onClose={() => setSelectedAccount(null)}
+                    />
+                </>
             )}
         </div>
     );

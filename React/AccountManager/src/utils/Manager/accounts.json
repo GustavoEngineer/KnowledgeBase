@@ -3,72 +3,84 @@
         "id": "g_001",
         "provider": "Google",
         "email": "gustavitotlgac@gmail.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "g_002",
         "provider": "Google - YouTube",
         "email": "gustavitotlgac@gmail.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "g_003",
         "provider": "Google - Drive",
         "email": "gustavitotlgac@gmail.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "g_004",
         "provider": "Google - Maps",
         "email": "gustavitotlgac@gmail.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "g_005",
         "provider": "Google - Ads",
         "email": "gustavitotlgac@gmail.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "g_006",
         "provider": "Google - Photos",
         "email": "gustavitotlgac@gmail.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "ms_001",
         "provider": "Microsoft - Outlook (Email Principal)",
         "email": "gustavoMarrufoXLVII@outlook.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "ms_002",
         "provider": "Microsoft - Teams",
         "email": "gustavoMarrufoXLVII@outlook.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "ms_003",
         "provider": "Microsoft - Azure",
         "email": "gustavoMarrufoXLVII@outlook.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "ms_004",
         "provider": "Microsoft - Xbox Network",
         "email": "gustavoMarrufoXLVII@outlook.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "ms_005",
         "provider": "Microsoft - OneDrive",
         "email": "gustavoMarrufoXLVII@outlook.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     },
     {
         "id": "ms_006",
         "provider": "Microsoft - Office 365/Copilot",
         "email": "gustavoMarrufoXLVII@outlook.com",
-        "status": "active"
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
     }
 ]
