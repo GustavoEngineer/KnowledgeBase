@@ -89,17 +89,21 @@ const LandingPage = () => {
             )}
 
             <div style={{ width: '100%', padding: '0 1rem' }}>
-                <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+                <form onSubmit={handleSubmit} style={{ width: '100%', position: 'relative', zIndex: 10 }}>
                     <Input
                         type="password"
                         placeholder="ACCESS CODE"
                         value={inputValue}
                         onChange={handleChange}
                         disabled={status === 'processing'}
-                        /* Passing style override for Input internals using CSS variables */
+                        /* Simplified style override using CSS variables available in context */
                         style={{
-                            borderBottomColor: status === 'idle' ? 'rgba(148, 163, 184, 0.2)' : 'var(--active-color)',
-                            color: status === 'idle' ? 'var(--color-accent)' : 'var(--active-color)'
+                            borderBottomColor: 'var(--active-color)',
+                            color: 'var(--active-color)',
+                            textAlign: 'center',
+                            letterSpacing: '0.2em',
+                            fontSize: '1.2rem',
+                            fontFamily: 'var(--font-mono)'
                         }}
                     />
                 </form>

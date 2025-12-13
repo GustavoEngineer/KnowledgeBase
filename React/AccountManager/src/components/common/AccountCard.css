@@ -1,0 +1,211 @@
+.account-card-overlay {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 999;
+    animation: slideDown 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.account-card {
+    /* Dimensions & Base */
+    width: 340px;
+    background: var(--color-bg-primary);
+    /* Deep Black */
+    position: relative;
+    padding: 2px;
+    /* For inner border offset */
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.15);
+
+    /* The main thin border layout */
+    border: 1px solid rgba(6, 182, 212, 0.3);
+
+    /* Grid Background */
+    background-image:
+        linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+
+    font-family: var(--font-display);
+    color: var(--color-accent);
+}
+
+/* Corner Brackets - Detached style */
+.account-card::before,
+.account-card::after,
+.card-content::before,
+.card-content::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--color-accent);
+    transition: all 0.3s ease;
+}
+
+/* Outer Corners */
+.account-card::before {
+    top: -4px;
+    left: -4px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.account-card::after {
+    top: -4px;
+    right: -4px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.card-content::before {
+    bottom: -4px;
+    left: -4px;
+    border-right: none;
+    border-top: none;
+}
+
+.card-content::after {
+    bottom: -4px;
+    right: -4px;
+    border-left: none;
+    border-top: none;
+}
+
+.card-content {
+    /* Container for content to protect visual hierarchy */
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* Header Section */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.3);
+    background: linear-gradient(to bottom, rgba(6, 182, 212, 0.1), transparent);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px var(--color-accent-glow);
+}
+
+.card-close {
+    background: transparent;
+    border: 1px solid var(--color-accent-dim);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 0 6px;
+    transition: all 0.2s;
+}
+
+.card-close:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    box-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+/* Details Section */
+.card-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-row {
+    position: relative;
+}
+
+.detail-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-text-secondary);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.detail-value {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: #fff;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 8px 12px;
+    background: rgba(15, 23, 42, 0.6);
+    box-shadow: inset 0 0 10px rgba(6, 182, 212, 0.05);
+}
+
+/* "Buttons" / Status Grid Footer */
+.card-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0 20px 20px;
+}
+
+.footer-item {
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-item::before {
+    /* Corner tick for footer items */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid var(--color-accent);
+    border-right: 2px solid var(--color-accent);
+}
+
+.footer-label {
+    display: block;
+    font-size: 0.6rem;
+    color: var(--color-accent-dim);
+    margin-bottom: 4px;
+}
+
+.footer-status {
+    width: 100%;
+    height: 4px;
+    background: rgba(6, 182, 212, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-status::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: var(--color-accent);
+    animation: scan 2s linear infinite;
+}

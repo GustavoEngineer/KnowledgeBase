@@ -1,0 +1,14 @@
+[
+    {
+        "id": "g_001",
+        "provider": "Google",
+        "email": "gustavitotlgac@gmail.com",
+        "status": "active"
+    },
+    {
+        "id": "ms_001",
+        "provider": "Microsoft",
+        "email": "gustavoMarrufoXLVII@outlook.com",
+        "status": "active"
+    }
+]

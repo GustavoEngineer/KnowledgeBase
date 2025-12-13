@@ -1,166 +1,198 @@
-/* Base Variables for the HUD */
+/* Landing Page Styles using theme.css */
+
 .hud-container {
-    --active-color: #3b82f6;
-    /* Blue 500 - requested "Blue" */
-    --active-bg: rgba(15, 23, 42, 0.85);
-    /* Default Slate */
-    --shadow-color: rgba(59, 130, 246, 0.1);
-    --border-color: rgba(59, 130, 246, 0.5);
-    /* More visible Blue border */
+    /* Map local state variables to theme variables */
+    --active-color: var(--color-accent);
+    --active-bg: rgba(15, 23, 42, 0.9);
+    --border-color: rgba(6, 182, 212, 0.4);
+    --shadow-color: rgba(6, 182, 212, 0.15);
 
     position: relative;
     padding: 4rem 2rem;
     width: 100%;
-    max-width: 450px;
-    min-height: 300px;
+    max-width: 480px;
+    min-height: 340px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 
-    /* Dynamic Properties */
-    background: var(--active-bg);
+    background: var(--color-bg-primary);
     border: 1px solid var(--border-color);
-    box-shadow: 0 0 20px var(--shadow-color);
-    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 40px var(--shadow-color);
+
+    /* Grid Background - same as AccountCard */
+    background-image:
+        linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+
+    transition: all 0.3s ease;
 }
 
 /* Status: Error */
 .hud-container.status-error {
-    --active-color: #ef4444;
-    /* Red */
-    --active-bg: rgba(69, 10, 10, 0.9);
-    /* Dark Red */
+    --active-color: var(--color-error);
+    --border-color: var(--color-error);
     --shadow-color: rgba(239, 68, 68, 0.25);
-    --border-color: #ef4444;
+    background-image:
+        linear-gradient(rgba(239, 68, 68, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(239, 68, 68, 0.05) 1px, transparent 1px);
 }
 
 /* Status: Success */
 .hud-container.status-success {
-    --active-color: #22c55e;
-    /* Green */
-    --border-color: #22c55e;
+    --active-color: var(--color-success);
+    --border-color: var(--color-success);
     --shadow-color: rgba(34, 197, 94, 0.25);
+    background-image:
+        linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
 }
 
-/* Corner Accents */
+/* Corner Accents - Detached Style */
 .corner-accent {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    /* Use current active color */
-    border-color: var(--active-color);
-    filter: drop-shadow(0 0 4px var(--active-color));
-    transition: border-color 0.3s, filter 0.3s;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--active-color);
+    transition: all 0.3s ease;
 }
 
 .corner-tl {
-    top: 0;
-    left: 0;
-    border-top: 2px solid;
-    border-left: 2px solid;
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
 }
 
 .corner-tr {
-    top: 0;
-    right: 0;
-    border-top: 2px solid;
-    border-right: 2px solid;
+    top: -2px;
+    right: -2px;
+    border-left: none;
+    border-bottom: none;
 }
 
 .corner-bl {
-    bottom: 0;
-    left: 0;
-    border-bottom: 2px solid;
-    border-left: 2px solid;
+    bottom: -2px;
+    left: -2px;
+    border-right: none;
+    border-top: none;
 }
 
 .corner-br {
-    bottom: 0;
-    right: 0;
-    border-bottom: 2px solid;
-    border-right: 2px solid;
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
 }
 
-/* Status Text at top */
+/* Scanline Effect */
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--active-color);
+    opacity: 0.2;
+    animation: scan 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+/* Typography & Content */
 .status-indicator {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--active-color);
-    margin-bottom: 0.5rem;
-    opacity: 0.7;
+    margin-bottom: 1rem;
     letter-spacing: 0.3em;
-    transition: color 0.3s;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px var(--active-color);
 }
 
-/* Main Header */
 .main-header {
-    margin-bottom: 3rem;
-    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    font-family: var(--font-display);
+    font-size: 2rem;
     font-weight: 700;
     color: #fff;
     text-align: center;
-    margin-top: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--shadow-color);
 }
 
-/* Attention Header Block */
+/* Attention Block */
 .attention-block {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 .attention-icon {
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px var(--active-color));
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 8px var(--active-color));
 }
 
 .attention-icon path {
     stroke: var(--active-color);
     fill: var(--active-color) !important;
-    /* Force fill to use variable */
 }
 
 .attention-title {
     font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.2rem;
     color: var(--active-color);
-    text-align: center;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 20px var(--active-color);
+    margin-bottom: 0.2rem;
+    letter-spacing: 2px;
 }
 
 .attention-sub {
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--active-color);
     letter-spacing: 0.2em;
-    text-align: center;
+    opacity: 0.8;
 }
 
-/* Binary Decoration */
+/* Binary Deco */
 .binary-deco {
     position: absolute;
-    top: 20%;
-    right: 1rem;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
     font-family: var(--font-mono);
     font-size: 0.6rem;
     color: var(--active-color);
-    opacity: 0.5;
+    opacity: 0.2;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
+    user-select: none;
     pointer-events: none;
-}
-
-/* Input Override via Context Class */
-.hud-input-override {
-    border-bottom-color: var(--border-color) !important;
-    color: var(--active-color) !important;
 }
 
 /* Footer Msg */
@@ -169,15 +201,9 @@
     font-family: var(--font-mono);
     font-size: 0.7rem;
     color: var(--active-color);
-    letter-spacing: 0.1em;
-    height: 1rem;
+    letter-spacing: 0.15em;
+    opacity: 0.7;
 }
 
-.status-idle .footer-msg {
-    color: var(--color-text-secondary);
-}
-
-/* Scanline override */
-.scanline {
-    background: var(--active-color) !important;
-}
+/* Input Styles override */
+/* We can target the input inside if wrapper has class */
