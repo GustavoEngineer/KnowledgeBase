@@ -42,6 +42,27 @@
         "passwordCifrada": "HSILYAV"
     },
     {
+        "id": "g_007",
+        "provider": "Google - Calendar",
+        "email": "gustavitotlgac@gmail.com",
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
+    },
+    {
+        "id": "g_008",
+        "provider": "Google - Meet",
+        "email": "gustavitotlgac@gmail.com",
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
+    },
+    {
+        "id": "g_009",
+        "provider": "Google - Search Console",
+        "email": "gustavitotlgac@gmail.com",
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
+    },
+    {
         "id": "ms_001",
         "provider": "Microsoft - Outlook (Email Principal)",
         "email": "gustavoMarrufoXLVII@outlook.com",
@@ -79,6 +100,34 @@
     {
         "id": "ms_006",
         "provider": "Microsoft - Office 365/Copilot",
+        "email": "gustavoMarrufoXLVII@outlook.com",
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
+    },
+    {
+        "id": "ms_007",
+        "provider": "Microsoft - Skype",
+        "email": "gustavoMarrufoXLVII@outlook.com",
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
+    },
+    {
+        "id": "ms_008",
+        "provider": "Microsoft - SharePoint",
+        "email": "gustavoMarrufoXLVII@outlook.com",
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
+    },
+    {
+        "id": "ms_009",
+        "provider": "Microsoft - Power BI",
+        "email": "gustavoMarrufoXLVII@outlook.com",
+        "status": "active",
+        "passwordCifrada": "HSILYAV"
+    },
+    {
+        "id": "ms_010",
+        "provider": "Microsoft - Dynamics 365",
         "email": "gustavoMarrufoXLVII@outlook.com",
         "status": "active",
         "passwordCifrada": "HSILYAV"

@@ -31,3 +31,73 @@
     opacity: 1;
     filter: drop-shadow(0 0 5px var(--color-accent));
 }
+
+/* Logout Button Specifics */
+.logout-btn {
+    border-left: 1px solid var(--color-accent-dim);
+    padding-left: 15px;
+    margin-left: 5px;
+    width: 40px;
+    /* Increased from default */
+    height: 40px;
+    /* Increased from default */
+}
+
+.logout-btn:hover {
+    color: #f87171;
+    /* Red for power off */
+    filter: drop-shadow(0 0 5px rgba(248, 113, 113, 0.5));
+}
+
+/* Shutdown Overlay */
+.shutdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.shutdown-message {
+    font-family: var(--font-display, 'Orbitron', sans-serif);
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--color-accent);
+
+    /* Typing & Glitch Effect Simulation */
+    border-right: 2px solid var(--color-accent);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--color-accent)
+    }
+}
