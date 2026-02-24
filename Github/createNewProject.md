@@ -56,5 +56,3 @@ A partir de ahora, tu flujo de trabajo será el estándar de Git:
 ### ¿Qué sigue?
 
 Ya tienes tu repo vivo y coleando en la nube sin haber hecho un solo clic en la interfaz de GitHub.
-
-¿Te gustaría que te ayude a configurar un archivo **.gitignore** para que no subas basura (como carpetas de nodos o archivos de sistema) a tu nuevo repositorio?
